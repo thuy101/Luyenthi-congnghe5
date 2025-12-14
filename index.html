@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Thi Công Nghệ 5 - Mai Thị Thúy</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div class="page-title-banner">
+        <h1>Bài Thi Công Nghệ Lớp 5</h1>
+        <div class="teacher-info-box"> 
+            <p>Giáo viên: Mai Thị Thúy</p>
+            <p>Đơn vị: Trường TH Tân Đồng</p>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <div class="exam-selection" id="exam-selection-tabs">
+            <button class="exam-tab active" data-exam-id="1">Đề 1</button>
+            <button class="exam-tab" data-exam-id="2">Đề 2</button>
+            <button class="exam-tab" data-exam-id="3">Đề 3</button>
+            <button class="exam-tab" data-exam-id="4">Đề 4</button>
+            <button class="exam-tab" data-exam-id="5">Đề 5</button>
+        </div>
+        
+        <div class="main-content-area">
+            
+            <div class="sidebar">
+                <p class="progress-info" id="current-question-info">Câu hỏi | Đề số: 1/10</p>
+                <div class="question-progress-grid" id="progress-container">
+                    </div>
+
+                <button class="submit-button" id="submit-exam-btn">KẾT THÚC BÀI THI</button>
+                
+                <div class="result-box hidden" id="result-box">
+                    <h4 id="exam-status"></h4>
+                    <p>Tổng số câu đúng: <span id="correct-count">0</span></p>
+                    <p>Tổng số câu sai: <span id="incorrect-count">0</span></p>
+                    <button class="submit-button nav-btn" id="select-new-exam-btn">LÀM ĐỀ MỚI</button>
+                </div>
+            </div>
+
+            <div class="question-panel">
+                <div class="question-content">
+                    <h3 id="question-header">Câu hỏi 1:</h3>
+                    <p class="question-text" id="question-text">Nội dung câu hỏi sẽ hiển thị ở đây.</p>
+                </div>
+                
+                <div class="options-container" id="answer-options">
+                    </div>
+
+                <div id="correct-answer-display" class="hidden">
+                    <p><strong>Đáp án đúng:</strong> <span id="correct-answer-text"></span></p>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="nav-btn" id="prev-btn" disabled>« Câu Trước</button>
+                    <button class="nav-btn" id="next-btn">Câu Tiếp Theo »</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+:root {
+    /* TĂNG FONT CƠ BẢN */
+    font-size: 18px; 
+    --primary-color: #007bff; 
+    --accent-color: #f7a570; 
+    --sidebar-bg: #f5eee8; 
+    --question-panel-bg: #ffe4c4;
+    --correct-color: #00a85a; 
+    --incorrect-color: #ff3838; 
+    --button-bg: #3498db; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6e6fa; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ĐẢM BẢO FULL HEIGHT */
+    min-height: 100vh; 
+    width: 100vw;
+}
+
+.page-title-banner {
+    width: 95%; /* Tăng độ rộng */
+    max-width: 1200px;
+    padding: 20px 0;
+    text-align: center;
+    background: linear-gradient(to bottom, #f9f0e8, #f0e0d0);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative; 
+}
+
+.page-title-banner h1 {
+    color: #000080; 
+    font-size: 2.2em; 
+    margin: 0;
+}
+
+/* THÔNG TIN GIÁO VIÊN (Góc phải phía trên) */
+.teacher-info-box {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    text-align: right;
+    font-size: 0.85em; 
+    color: #000080; 
+    line-height: 1.3;
+}
+
+.teacher-info-box p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* CONTAINER CHÍNH */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 95%; 
+    max-width: 1200px;
+    flex-grow: 1; 
+    margin-bottom: 20px;
+}
+
+/* THANH CHỌN ĐỀ */
+.exam-selection {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.exam-tab {
+    padding: 10px 18px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.exam-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+
+/* KHU VỰC NỘI DUNG CHÍNH */
+.main-content-area {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+/* SIDEBAR (BÊN TRÁI) */
+.sidebar {
+    width: 280px; 
+    padding: 25px;
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-self: flex-start; 
+}
+
+.progress-info {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #d17540; 
+    margin-bottom: 20px;
+}
+
+.question-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px; 
+    margin-bottom: 30px;
+}
+
+.q-number {
+    padding: 12px; 
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--button-bg); 
+    color: white;
+    transition: background-color 0.2s;
+    font-size: 1.1em;
+}
+
+.q-number.active {
+    background-color: var(--incorrect-color);
+    box-shadow: 0 0 5px var(--incorrect-color);
+}
+
+.q-number.answered {
+    background-color: var(--primary-color); 
+}
+
+/* BUTTON NỘP BÀI */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 1.2em; 
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px #c0805a; 
+    transition: background-color 0.2s;
+}
+
+/* KHU VỰC CÂU HỎI (BÊN PHẢI) */
+.question-panel {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--question-panel-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-content {
+    margin-bottom: 25px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 20px;
+}
+
+.question-content h3 {
+    color: #000080; 
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.question-text {
+    font-size: 1.2em; 
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* TÙY CHỌN TRẢ LỜI */
+.options-container {
+    margin-bottom: 35px;
+}
+
+.option-item {
+    display: block;
+    padding: 18px; 
+    margin-bottom: 12px;
+    border: 1px dashed #a0a0a0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em; 
+}
+
+.option-item:hover {
+    background-color: #fff0f5;
+}
+
+/* NÚT ĐIỀU HƯỚNG */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.nav-btn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* HIỂN THỊ KẾT QUẢ & ĐÁP ÁN ĐÚNG */
+.result-box {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#correct-answer-display {
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+    margin-top: 15px;
+    text-align: left;
+    font-size: 1.1em;
+    color: var(--correct-color);
+}
+
+.hidden {
+    display: none;
+}
+
+/* CÁC TRẠNG THÁI SAU KHI CHẤM ĐIỂM */
+.q-number.correct {
+    background-color: var(--correct-color);
+}
+
+.q-number.incorrect {
+    background-color: var(--incorrect-color);
+}
+
+.q-number:disabled {
+    cursor: default;
+}
+
+/* Bổ sung cho dạng Nối */
+.matching-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.match-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 1.1em;
+}
+
+.left-item {
+    font-weight: bold;
+    width: 45%;
+}
+
+.match-select {
+    padding: 8px;
+    width: 50%;
+    font-size: 1em;
+}
+
+/* Media Query cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .main-content-area {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .page-title-banner, .app-container {
+        width: 98%;
+        padding: 10px;
+    }
+    .teacher-info-box {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
